@@ -17,9 +17,7 @@ jobs:
           cache: 'gradle'
 
       - name: Build with Gradle
-        uses: ihub-pub/bot@main
-        with:
-          run: build
+        run: gradle build
 
   analyze:
     name: Analyze
@@ -58,10 +56,3 @@ jobs:
         uses: actions/checkout@main
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@main
-
-  validation:
-    name: Validate Gradle Wrapper
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: gradle/wrapper-validation-action@master

@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@main
         with:
           java-version: ${{ matrix.java_version }}
-          distribution: 'adopt'
+          distribution: 'temurin'
           cache: 'gradle'
 
       - name: Build with Gradle
@@ -40,7 +40,7 @@ jobs:
         uses: actions/setup-java@main
         with:
           java-version: ${{ matrix.java_version }}
-          distribution: 'adopt'
+          distribution: 'temurin'
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@main
